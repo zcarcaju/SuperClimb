@@ -6,7 +6,8 @@ public class CameraController : MonoBehaviour
 {
 
     private float moveSpeed = 0f;
-    public Transform target; // Drop the player in the inspector of the camera
+    [SerializeField]
+    private Transform target;
 
     void Update()
     {

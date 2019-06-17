@@ -8,6 +8,9 @@ TagManager:
   - portalB
   - bSide
   - oSide
+  - Trap
+  - TrapB
+  - TrapO
   layers:
   - Default
   - TransparentFX
