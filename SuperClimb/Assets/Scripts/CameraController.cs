@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
+    
     private float moveSpeed = 0f;
     [SerializeField]
     private Transform target;
@@ -14,4 +14,5 @@ public class CameraController : MonoBehaviour
         Vector3 newPosition =
         transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
     }
+
 }
