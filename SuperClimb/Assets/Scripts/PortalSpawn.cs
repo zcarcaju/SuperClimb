@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PortalSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Transform prefabOrange;
+
+    [SerializeField]
+    private Transform prefabBlue;
+
+    private void Start()
     {
-        
+        StartCoroutine(PortalControl());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator PortalControl()
     {
-        
+        yield return new WaitForSeconds(1.5f);
+        Instantiate(prefabOrange, new Vector2(0f, 2.0f), Quaternion.identity);
+        //Instantiate(prefabBlue, new Vector2(0f, 4.0f), Quaternion.identity);
+
     }
+
+
 }
