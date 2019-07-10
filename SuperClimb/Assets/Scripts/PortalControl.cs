@@ -6,9 +6,18 @@ public class PortalControl : MonoBehaviour
 {
     private Vector2 portalMovement;
     private float velX = 0f;
-    public float velY = 1f;
+
+    [SerializeField]
+    private float velY = 1f;
+    [SerializeField]
+    private float inicialRange;
+    [SerializeField]
+    private float finalRange;
+
+
     private float y;
 
+    
 
     private void Update()
     {
@@ -18,7 +27,7 @@ public class PortalControl : MonoBehaviour
 
         if(y < -6)
         {
-            transform.transform.Translate(0f,13f,0f);
+            transform.transform.Translate(0f, Random.Range(inicialRange, finalRange),0f);
         }
     }
 

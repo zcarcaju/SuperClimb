@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\PortalControl.cs" />
     <Compile Include="Assets\Scripts\PortalSpawn.cs" />
+    <Compile Include="Assets\Scripts\TrapControl.cs" />
     <Compile Include="Assets\Scripts\TrapSpawn.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Isaque-Notebook/Documents/Repo/SuperClimb/SuperClimb/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
