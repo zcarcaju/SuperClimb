@@ -12,6 +12,8 @@ TagManager:
   - TrapB
   - TrapO
   - EndWorld
+  - DestroyObjects
+  - Floor
   layers:
   - Default
   - TransparentFX

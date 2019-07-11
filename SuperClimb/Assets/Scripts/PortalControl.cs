@@ -23,13 +23,8 @@ public class PortalControl : MonoBehaviour
     {
         y = transform.position.y;
         transform.Translate(Vector3.down * Time.deltaTime, Space.World);
-
-
-        if(y < -6)
-        {
-            transform.transform.Translate(0f, Random.Range(inicialRange, finalRange),0f);
-        }
     }
+
 
 
 }

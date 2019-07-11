@@ -14,6 +14,9 @@ public class PlayerControl : MonoBehaviour
     private int maxCountJump = 2; // Max jump count
     private bool JumpNow = false;
 
+    public int score = 0;
+    private int countScore = 0;
+
     public Vector2 velPlayer; // player movement control
 
     private bool reset = false; // reload game
@@ -24,8 +27,7 @@ public class PlayerControl : MonoBehaviour
     }
     private bool verJumpNow = true; // player can jump
 
-    [SerializeField]
-    GameObject player;
+
 
     [SerializeField]
     Sprite orangeSprite; // player is orange
@@ -47,6 +49,8 @@ public class PlayerControl : MonoBehaviour
 
     private void Start()
     {
+        
+        score = 0;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer.sprite = orangeSprite;
         velPlayer.x = mSpeed;
@@ -61,6 +65,9 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         IsJumping();
+
+        countScore = (int)transform.position.y;
+        score = countScore;
     }
 
     private void IsJumping() // if true, player can jump
@@ -83,6 +90,33 @@ public class PlayerControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Conditions
+
+        //Floor Collision
+        if (collision.gameObject.tag == "Floor" && spriteRenderer.sprite == orangeSprite)
+        {
+            Physics2D.IgnoreLayerCollision(8, 9, true);
+            velPlayer = Vector2.zero;
+            countJump = maxCountJump;
+            verJumpNow = false;
+            rb.gravityScale = 0f;
+            rb.velocity = Vector2.zero;
+            Instantiate(explosionO, transform.position, Quaternion.identity);
+            spriteRenderer.color = Color.clear;
+            StartCoroutine(resetPlayer());
+        }
+
+        if (collision.gameObject.tag == "Floor" && spriteRenderer.sprite == blueSprite)
+        {
+            Physics2D.IgnoreLayerCollision(8, 9, true);
+            velPlayer = Vector2.zero;
+            countJump = maxCountJump;
+            verJumpNow = false;
+            rb.gravityScale = 0f;
+            rb.velocity = Vector2.zero;
+            Instantiate(explosionB, transform.position, Quaternion.identity);
+            spriteRenderer.color = Color.clear;
+            StartCoroutine(resetPlayer());
+        }
 
         //TRAP COLLISION 
         //OrangeTrap Collision if player is Orange
