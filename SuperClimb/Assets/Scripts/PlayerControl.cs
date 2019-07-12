@@ -94,7 +94,7 @@ public class PlayerControl : MonoBehaviour
         //Floor Collision
         if (collision.gameObject.tag == "Floor" && spriteRenderer.sprite == orangeSprite)
         {
-            Physics2D.IgnoreLayerCollision(8, 9, true);
+            
             velPlayer = Vector2.zero;
             countJump = maxCountJump;
             verJumpNow = false;
@@ -102,12 +102,13 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector2.zero;
             Instantiate(explosionO, transform.position, Quaternion.identity);
             spriteRenderer.color = Color.clear;
+            Physics2D.IgnoreLayerCollision(8, 10, true);
             StartCoroutine(resetPlayer());
         }
 
         if (collision.gameObject.tag == "Floor" && spriteRenderer.sprite == blueSprite)
         {
-            Physics2D.IgnoreLayerCollision(8, 9, true);
+            
             velPlayer = Vector2.zero;
             countJump = maxCountJump;
             verJumpNow = false;
@@ -115,6 +116,7 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector2.zero;
             Instantiate(explosionB, transform.position, Quaternion.identity);
             spriteRenderer.color = Color.clear;
+            Physics2D.IgnoreLayerCollision(8, 10, true);
             StartCoroutine(resetPlayer());
         }
 
@@ -226,6 +228,7 @@ public class PlayerControl : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(0);
+        
     }
     
     // Condition to reset jumpcount after collision with sides

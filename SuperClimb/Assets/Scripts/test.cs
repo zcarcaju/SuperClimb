@@ -20,7 +20,7 @@ public class test : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("portalO") || collision.gameObject.CompareTag("portalB"))
         {
-            Debug.Log("Destruiu");
+            
             collision.gameObject.transform.position = new Vector2(0f, 325f);
         }
     }
