@@ -227,7 +227,7 @@ public class PlayerControl : MonoBehaviour
     private IEnumerator resetPlayer()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         
     }
     

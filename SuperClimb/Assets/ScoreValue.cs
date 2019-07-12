@@ -6,9 +6,10 @@ public class ScoreValue : MonoBehaviour
 {
     [SerializeField]
     private Transform Player;
-
-    public Text score;
-    public Text highScore;
+    [SerializeField]
+    private Text score;
+    [SerializeField]
+    private Text highScore;
     public int high;
     public int temp;
  

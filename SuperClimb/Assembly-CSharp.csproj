@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\FloorController.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\PlayGame.cs" />
     <Compile Include="Assets\Scripts\PortalControl.cs" />
     <Compile Include="Assets\Scripts\PortalSpawn.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
