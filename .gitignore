@@ -1,0 +1,15 @@
+
+Library/
+
+Logs/
+
+Temp/
+
+obj/
+
+.vs/
+
+*.csproj
+
+*.sln
+\.DS_Store
